@@ -1,3 +1,16 @@
+## Ohmz Readme Part
+- **Installation Steps:** <br/>
+1. Update your docker-compose.yml with a bind mount for the configuration directory: <br/>
+```bash
+volumes:
+  - /absolute/host/path/to/config/Overseerr:/app/config
+```
+2. From the root directory "overseerr/" that contains the `Dockerfile`, run the command in terminal: : <br/>
+```bash
+docker build -t overseerr_recommendations .
+docker compose up -d overseerr
+```
+##
 <p align="center">
 <img src="./public/logo_full.svg" alt="Overseerr" style="margin: 20px 0;">
 </p>
