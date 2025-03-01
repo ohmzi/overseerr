@@ -1,4 +1,8 @@
 ## Ohmz Readme Part
+- **Whats different?:** <br/>
+Resolves the issue of any requests made via API don't automatically get approved.
+[Overseerr_issue_3926](https://github.com/sct/overseerr/issues/3926)<br/>
+
 - **Installation Steps:** <br/>
 1. Update your docker-compose.yml with a bind mount for the configuration directory: <br/>
 ```bash
