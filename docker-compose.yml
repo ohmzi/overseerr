@@ -1,12 +1,27 @@
-version: '3'
 services:
   overseerr:
+    # Build from your local Dockerfile instead of pulling from Docker Hub
     build:
       context: .
       dockerfile: Dockerfile.local
+    # The final name/tag for the built image
+    image: overseerr:latest
+
+    container_name: overseerr
+    # Map Tautulli's default port 8181 to the host
     ports:
       - 5055:5055
+
+    # Volumes for Tautulli config, your scripts, etc.
     volumes:
-      - .:/app:rw,cached
-      - /app/node_modules
-      - /app/.next
+      - /portainer/Files/AppData/Config/Overseerr:/app/config
+
+    # If you have environment variables, set them here:
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+
+    # Recommended so it restarts automatically
+    restart: unless-stopped
+
